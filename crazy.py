@@ -5,6 +5,8 @@ def red_file(filename):
         with open(filename, "r", encoding="utf-8") as file# jo tas faila nosaukums ir mainigs tape filename
        #jaatver vala fails ar open window
         #konstrukcija kas izstradat iznemumus/kludas, nodrosina pareizu izpildi pat ja notiek kludas
+            saturs=file.read()
+            return saturs 
 
     except Exception as e:
         return f"Notika kļūda:{e}"
@@ -30,3 +32,6 @@ while True:
         if filename:
             saturs=read_file(filename)
             #atjauninat musu logu?
+            # ievieto tekstu teksta ramiti pa rindam
+            logs=["Output"].update(saturs) # logariks kas noradu no kurienes nolasa
+            
