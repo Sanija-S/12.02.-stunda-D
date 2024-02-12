@@ -1,6 +1,13 @@
 import PySimpleGUI as sg # pip vajadzigs
 # izkārtojuma definīcija- jānosauc visas loga daļas 
+def red_file(filename):
+    try:
+        with open(filename, "r", encoding="utf-8") as file# jo tas faila nosaukums ir mainigs tape filename
+       #jaatver vala fails ar open window
+        #konstrukcija kas izstradat iznemumus/kludas, nodrosina pareizu izpildi pat ja notiek kludas
 
+    except Exception as e:
+        return f"Notika kļūda:{e}"
 daļas=[
 [sg.Text("Izvēlies failu, kuru nolasīt:")]
 [sg.InputText(key="filename"), sg.FileBrowse()]
@@ -18,4 +25,8 @@ while True:
     if notikums==sg.WINDOW_CLOSED or notikums=="Iziet":
         break
     # janolasa un jaievieto teksta laukaa info
-    
+    if notikums=="Nolasīt":
+        filename=vertibas["filename"]
+        if filename:
+            saturs=read_file(filename)
+            #atjauninat musu logu?
