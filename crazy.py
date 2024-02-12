@@ -18,7 +18,7 @@ def red_file(filename):
         # jāsaglabā audio failā
         ppp.save("lasa.mp3")
         #palaist ierakstito failu, nospiezot pogu vins atskano nevis mes meklejam failu kuru atvert--- stradajam ar operatoru sistemu os
-        os.system("start lasa.mp3")
+        os.system("start lasa.mp3") #
 
 daļas=[
 [sg.Text("Izvēlies failu, kuru nolasīt:")]
